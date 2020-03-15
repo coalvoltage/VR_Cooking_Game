@@ -6,6 +6,7 @@ TagManager:
   tags:
   - food
   - cooking
+  - Door
   layers:
   - Default
   - TransparentFX
@@ -16,8 +17,8 @@ TagManager:
   - 
   - 
   - VRInteractables
-  - 
-  - 
+  - Door
+  - Oven
   - 
   - 
   - 
