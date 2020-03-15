@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7860999252452109265}
   - component: {fileID: 8438133503578954373}
   - component: {fileID: 7057042657935658402}
+  - component: {fileID: 5982309690437585577}
   m_Layer: 8
   m_Name: foodTomato
   m_TagString: food
@@ -123,3 +124,22 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.2
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &5982309690437585577
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2241665294983203602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d1a7708e76601b4ea829921c33bc624, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_allowOffhandGrab: 1
+  m_snapPosition: 0
+  m_snapOrientation: 0
+  m_snapOffset: {fileID: 0}
+  m_grabPoints:
+  - {fileID: 7057042657935658402}
+  m_materialColorField: 
