@@ -50,7 +50,7 @@ public class CookingPot : CookingMethod
 		
 		// Recipes here
 		if(cookingTimer == COOK_TIME_LIMIT) {
-			//Rendering Clear
+			//Rendering Clear Ingredients
 			for(int i = 0; i < currentFoodRender.Length; i++) {
 				if(currentFoodRender[i] != null) {
 					Destroy(currentFoodRender[i]);
@@ -58,23 +58,25 @@ public class CookingPot : CookingMethod
 			}
 			
 			if(foodArray[(int)Food.FoodType.Tomato] == 4 && foodArray[(int)Food.FoodType.Water] == 1) {
+                //Clear and replace with finished recipe
 				Array.Clear(foodArray, 0, foodArray.Length);
 				
 				foodArray[(int)Food.FoodType.SoupTomato] = 1;
 				
-				
+				//Spawn Food Render Output
 				currentFoodRender[(int)Food.FoodType.SoupTomato] = Instantiate(foodLooks[(int)Food.FoodType.SoupTomato]);
 
 				currentFoodRender[(int)Food.FoodType.SoupTomato].transform.SetParent(gameObject.transform);
 				currentFoodRender[(int)Food.FoodType.SoupTomato].transform.localPosition = new Vector3(0.0f, 0.2f, 0.0f);
 			}
 			else if(foodArray[(int)Food.FoodType.Meat] == 1 && foodArray[(int)Food.FoodType.Water] == 4) {
-				Array.Clear(foodArray, 0, foodArray.Length);
+                //Clear and replace with finished recipe
+                Array.Clear(foodArray, 0, foodArray.Length);
 				
 				foodArray[(int)Food.FoodType.SoupMeat] = 1;
-				
-				
-				currentFoodRender[(int)Food.FoodType.SoupMeat] = Instantiate(foodLooks[(int)Food.FoodType.SoupMeat]);
+
+                //Spawn Food Render Output
+                currentFoodRender[(int)Food.FoodType.SoupMeat] = Instantiate(foodLooks[(int)Food.FoodType.SoupMeat]);
 
 				currentFoodRender[(int)Food.FoodType.SoupMeat].transform.SetParent(gameObject.transform);
 				currentFoodRender[(int)Food.FoodType.SoupMeat].transform.localPosition = new Vector3(0.0f, 0.2f, 0.0f);
