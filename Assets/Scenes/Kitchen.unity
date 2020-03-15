@@ -4161,6 +4161,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: oven00
       objectReference: {fileID: 0}
+    - target: {fileID: 1967479020981443202, guid: 459854125c7909840b9d34c396d51855,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: -8601384144426388268, guid: 459854125c7909840b9d34c396d51855,
         type: 3}
       propertyPath: m_Layer
@@ -4241,11 +4246,6 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 436ea4a77d6f9bb4c8e8865ae9d65c6b, type: 2}
-    - target: {fileID: 1967479020981443202, guid: 459854125c7909840b9d34c396d51855,
-        type: 3}
-      propertyPath: m_Layer
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 5041580539255107380, guid: 459854125c7909840b9d34c396d51855,
         type: 3}
       propertyPath: m_LocalRotation.x
@@ -4402,25 +4402,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 10, y: 9, z: 1}
   m_Center: {x: -1, y: 0, z: 9.5}
---- !u!114 &1155389435
-MonoBehaviour:
+--- !u!65 &1155389435
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1155389425}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d1a7708e76601b4ea829921c33bc624, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_allowOffhandGrab: 1
-  m_snapPosition: 0
-  m_snapOrientation: 0
-  m_snapOffset: {fileID: 0}
-  m_grabPoints:
-  - {fileID: 1155389427}
-  m_materialColorField: 
+  serializedVersion: 2
+  m_Size: {x: 4, y: 9, z: 10}
+  m_Center: {x: 1, y: -3.5, z: 3.5}
 --- !u!54 &1155389436
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4435,8 +4429,24 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 94
+  m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!114 &1155389437
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1155389425}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4448dc98ee75f9f46b2ab7263ade09d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  primeHand: {fileID: 1534928572}
+  secondHand: {fileID: 2129075114}
+  isOpen: 0
+  isHolding: 0
 --- !u!1001 &1166125964
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5470,7 +5480,7 @@ GameObject:
   - component: {fileID: 1534928575}
   - component: {fileID: 1534928574}
   m_Layer: 0
-  m_Name: TempHand
+  m_Name: TempHandR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5498,8 +5508,8 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1534928572}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
+  m_IsTrigger: 1
+  m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -7626,7 +7636,7 @@ GameObject:
   - component: {fileID: 2129075117}
   - component: {fileID: 2129075116}
   m_Layer: 0
-  m_Name: TempHand
+  m_Name: TempHandL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7654,8 +7664,8 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2129075114}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
+  m_IsTrigger: 1
+  m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -7744,6 +7754,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8386125746690721306}
     m_Modifications:
+    - target: {fileID: 1393624701124568, guid: 1808544e00d22df4ca12ecd30676e19f, type: 3}
+      propertyPath: m_Name
+      value: DoorActual
+      objectReference: {fileID: 0}
     - target: {fileID: 4138858921660700, guid: 1808544e00d22df4ca12ecd30676e19f, type: 3}
       propertyPath: m_LocalPosition.x
       value: -7.5
@@ -7799,10 +7813,6 @@ PrefabInstance:
     - target: {fileID: 4138858921660700, guid: 1808544e00d22df4ca12ecd30676e19f, type: 3}
       propertyPath: m_LocalScale.z
       value: 2.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1393624701124568, guid: 1808544e00d22df4ca12ecd30676e19f, type: 3}
-      propertyPath: m_Name
-      value: DoorActual
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1808544e00d22df4ca12ecd30676e19f, type: 3}
