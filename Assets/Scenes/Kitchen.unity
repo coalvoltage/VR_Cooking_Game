@@ -4446,7 +4446,6 @@ MonoBehaviour:
   primeHand: {fileID: 1534928572}
   secondHand: {fileID: 2129075114}
   isOpen: 0
-  isHolding: 0
 --- !u!1001 &1166125964
 PrefabInstance:
   m_ObjectHideFlags: 0

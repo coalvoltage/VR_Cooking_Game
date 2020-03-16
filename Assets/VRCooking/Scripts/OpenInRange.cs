@@ -7,7 +7,6 @@ public class OpenInRange : MonoBehaviour
 	public GameObject primeHand;
 	public GameObject secondHand;
 	public bool isOpen = false;
-	public bool isHolding = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,23 +21,11 @@ public class OpenInRange : MonoBehaviour
 	
 	private void OnTriggerStay(Collider other)
     {
-        if(((OVRInput.Get(OVRInput.Axis1D.PrimaryHandTrigger, OVRInput.Controller.LTouch) > 0.1f 
-			|| OVRInput.Get(OVRInput.Axis1D.PrimaryIndexTrigger, OVRInput.Controller.LTouch) > 0.1f)
-			&& other.gameObject == secondHand && isHolding == false) ||
-			((OVRInput.Get(OVRInput.Axis1D.PrimaryHandTrigger, OVRInput.Controller.RTouch) > 0.1f 
-			|| OVRInput.Get(OVRInput.Axis1D.PrimaryIndexTrigger, OVRInput.Controller.RTouch)> 0.1f)
-			&& other.gameObject == primeHand && isHolding == false)) {
-            isHolding = true;
+        if(((OVRInput.GetUp(OVRInput.Button.One, OVRInput.Controller.LTouch) || OVRInput.GetUp(OVRInput.Button.Two, OVRInput.Controller.LTouch))
+			&& other.gameObject == secondHand) ||
+			((OVRInput.GetUp(OVRInput.Button.One, OVRInput.Controller.RTouch) || OVRInput.GetUp(OVRInput.Button.Two, OVRInput.Controller.RTouch))
+			&& other.gameObject == primeHand)) {
+            isOpen = !isOpen;
         }
-        else if(((OVRInput.Get(OVRInput.Axis1D.PrimaryHandTrigger, OVRInput.Controller.LTouch) < 0.1f 
-			|| OVRInput.Get(OVRInput.Axis1D.PrimaryIndexTrigger, OVRInput.Controller.LTouch) < 0.1f)
-			&& other.gameObject == secondHand && isHolding == false) ||
-			((OVRInput.Get(OVRInput.Axis1D.PrimaryHandTrigger, OVRInput.Controller.RTouch) < 0.1f 
-			|| OVRInput.Get(OVRInput.Axis1D.PrimaryIndexTrigger, OVRInput.Controller.RTouch) < 0.1f)
-			&& other.gameObject == primeHand && isHolding == true)) {
-			isHolding = false;
-			isOpen = true;
-			
-		}
     }
 }
