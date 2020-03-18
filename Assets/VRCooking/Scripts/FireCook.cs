@@ -29,10 +29,7 @@ public class FireCook : MonoBehaviour
 
         }
     }
-	private void OnTriggerStay(Collider other)
-    {
 
-    }
     private void OnTriggerExit(Collider other)
     {
         if (other.gameObject.tag == "cooking")

@@ -36,4 +36,9 @@ public class CookingMethod : MonoBehaviour
 	virtual public void Cooking() {
 		//Nothing save for other methods
 	}
+
+    virtual public void Baking()
+    {
+        //Nothing save for other methods
+    }
 }
