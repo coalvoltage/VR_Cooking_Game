@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CFood : MonoBehaviour
 {
-	public int completed;
+	public int completed, failed;
     private float waitTime;
     private float timer;
 	private Food.FoodType foodT;
@@ -16,9 +16,10 @@ public class CFood : MonoBehaviour
     {
 		correct = false;
 		completed = 0;
+		failed = 0;
 		waitTime = 40.0f;
 		timer = 0.0f;
-		foodT = (Food.FoodType)Random.Range(0,8);
+		foodT = (Food.FoodType)Random.Range(2,8);
 		g = GameObject.Find(gameO);
     }
 
@@ -28,11 +29,10 @@ public class CFood : MonoBehaviour
 		timer += Time.deltaTime;
         if(timer >= waitTime){
 			reset_Food();
-			if(completed > 0)
-				completed--;
+			failed++;
 		}
 		if(g != null)
-			g.GetComponent<ChangeText>().theText = timer.ToString("#.0") +"\n\n" + foodT.ToString();
+			g.GetComponent<ChangeText>().theText = (waitTime - timer).ToString("#") +"\n\n" + foodT.ToString();
     }
 	void reset_Food()
 	{
