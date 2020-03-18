@@ -21,11 +21,20 @@ public class OpenInRange : MonoBehaviour
 	
 	private void OnTriggerStay(Collider other)
     {
-        if(((OVRInput.GetUp(OVRInput.Button.One, OVRInput.Controller.LTouch) || OVRInput.GetUp(OVRInput.Button.Two, OVRInput.Controller.LTouch))
-			&& other.gameObject == secondHand) ||
-			((OVRInput.GetUp(OVRInput.Button.One, OVRInput.Controller.RTouch) || OVRInput.GetUp(OVRInput.Button.Two, OVRInput.Controller.RTouch))
-			&& other.gameObject == primeHand)) {
+        if((OVRInput.Get(OVRInput.RawButton.LIndexTrigger) ||
+           OVRInput.Get(OVRInput.RawButton.LHandTrigger) && other.gameObject == secondHand) ||
+           (OVRInput.Get(OVRInput.RawButton.RIndexTrigger) ||
+           OVRInput.Get(OVRInput.RawButton.RHandTrigger)) && other.gameObject == primeHand)
+        {
             isOpen = !isOpen;
+            if (isOpen)
+            {
+                gameObject.transform.Rotate(0.0f, 90.0f, 0.0f, Space.World);
+            }
+            else
+            {
+                gameObject.transform.Rotate(0.0f, -90.0f, 0.0f, Space.World);
+            }
         }
     }
 }
