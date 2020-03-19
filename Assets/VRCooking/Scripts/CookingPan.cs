@@ -99,6 +99,7 @@ public class CookingPan : CookingMethod
                 foodArray[(int)Food.FoodType.Trash] = 1;
             }
 
+            recipeCounter = 0;
             cookingTimer = 0.0f;
             bakingTimer = 0.0f;
         }
@@ -173,6 +174,7 @@ public class CookingPan : CookingMethod
 
             cookingTimer = 0.0f;
             bakingTimer = 0.0f;
+            recipeCounter = 0;
         }
     }
 

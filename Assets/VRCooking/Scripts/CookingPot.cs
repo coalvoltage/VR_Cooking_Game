@@ -110,8 +110,8 @@ public class CookingPot : CookingMethod
 				Array.Clear(foodArray, 0, foodArray.Length);
 				foodArray[(int)Food.FoodType.Trash] = 1;
 			}
-			
-			cookingTimer = 0.0f;
+            recipeCounter = 0;
+            cookingTimer = 0.0f;
 		}
     }
 	

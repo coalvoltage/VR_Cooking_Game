@@ -6,7 +6,7 @@ using UnityEngine;
 public class CookingMethod : MonoBehaviour
 {
 	int MAX_RECIPE_SIZE = 5;
-	int recipeCounter = 0;
+	public int recipeCounter = 0;
 	public bool haveCollided = false;
 	
 	public int[] foodArray = new int[Enum.GetNames(typeof(Food.FoodType)).Length];
