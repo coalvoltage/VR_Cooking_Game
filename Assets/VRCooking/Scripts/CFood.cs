@@ -17,9 +17,9 @@ public class CFood : MonoBehaviour
 		correct = false;
 		completed = 0;
 		failed = 0;
-		waitTime = 40.0f;
+		waitTime = 200.0f;
 		timer = 0.0f;
-		foodT = (Food.FoodType)Random.Range(2,8);
+		foodT = (Food.FoodType)Random.Range(10,17);
 		g = GameObject.Find(gameO);
     }
 
@@ -36,14 +36,14 @@ public class CFood : MonoBehaviour
     }
 	void reset_Food()
 	{
-		foodT = (Food.FoodType)Random.Range(0,8);
+		foodT = (Food.FoodType)Random.Range(10, 17);
 		if(waitTime > 10.0f)
 			waitTime = waitTime - 2.5f;
 		timer = 0;
 	}
 	void OnTriggerEnter(Collider col)
     {
-        if(col.gameObject.tag == "food")
+        if(col.gameObject.tag == "foodOutput")
         {
 			if(col.gameObject.GetComponent<Food>().foodName == (int)foodT){
 				GameObject.Find(gameO).GetComponent<ChangeText>().theText = timer.ToString("#.00") +"\n\n" + foodT.ToString();
