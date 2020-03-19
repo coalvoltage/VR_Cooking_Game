@@ -8,6 +8,7 @@ TagManager:
   - cooking
   - Door
   - foodOutput
+  - foodInit
   layers:
   - Default
   - TransparentFX
