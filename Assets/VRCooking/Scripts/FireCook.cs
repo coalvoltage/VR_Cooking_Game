@@ -29,17 +29,14 @@ public class FireCook : MonoBehaviour
 
         }
     }
-	private void OnTriggerStay(Collider other)
-    {
 
-    }
     private void OnTriggerExit(Collider other)
     {
         if (other.gameObject.tag == "cooking")
         {
             //particle
 			CookingMethod tempCook = other.gameObject.GetComponent(typeof(CookingMethod)) as CookingMethod;
-			tempCook.Cooking();
+			tempCook.StopCook();
             fireParticle.Stop();
         }
     }

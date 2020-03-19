@@ -7,12 +7,24 @@ public class Food : MonoBehaviour
 	public enum FoodType {
 		Nothing,
 		Trash,
+        //Ingredients
 		Water,
 		Tomato,
-		Meat,
-		SoupTomato,
-		SoupMeat,
-		SoupStew
+		RawMeat,
+        Shrimp,
+        Sauce,
+        Butter,
+        Dough,
+        Cheese,
+        //finished foods
+		TomatoSoup,
+		Broth,
+		Bread,
+        Croissant,
+        Pizza,
+        Tempura,
+        Steak,
+        Pancake
 	}		
 	public int foodName = (int)FoodType.Trash;
     // Start is called before the first frame update
