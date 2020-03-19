@@ -51,7 +51,7 @@ public class OvenCook : MonoBehaviour
             if (isTrackingCooking)
             {
                 CookingMethod tempCook = other.gameObject.GetComponent(typeof(CookingMethod)) as CookingMethod;
-                tempCook.Baking();
+                tempCook.StopCook();
                 isTrackingCooking = false;
             }
             isTrackingCooking = false;

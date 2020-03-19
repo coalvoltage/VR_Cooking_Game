@@ -170,19 +170,39 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   haveCollided: 0
-  foodArray: 0000000000000000000000000000000000000000000000000000000000000000
+  foodArray: 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   cookingTimer: 0
   isCooking: 0
   foodLooks:
   - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 5525045306806308973, guid: 9fef97014aebe0a4184796daeb6e167c, type: 3}
   - {fileID: 1784806568729633629, guid: 303fc0847c82d044bb2c5a1d541fa732, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 4982616290515803547, guid: 82d62fd4eeec9f941a411ac0c874e983, type: 3}
+  - {fileID: 9198310353501910094, guid: 1bc1317f5e1e92f469152e176effc566, type: 3}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 4982616290515803547, guid: 82d62fd4eeec9f941a411ac0c874e983, type: 3}
   - {fileID: 3889075868953984192, guid: 45426ba094159bf4992b4f0574e00299, type: 3}
   - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   currentFoodRender:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
@@ -207,5 +227,8 @@ MonoBehaviour:
   m_snapPosition: 0
   m_snapOrientation: 0
   m_snapOffset: {fileID: 0}
-  m_grabPoints: []
+  m_grabPoints:
+  - {fileID: 7048511884209508787}
+  - {fileID: 7048531530468092087}
+  - {fileID: 7048385037270585179}
   m_materialColorField: 

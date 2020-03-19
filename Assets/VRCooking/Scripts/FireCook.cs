@@ -36,7 +36,7 @@ public class FireCook : MonoBehaviour
         {
             //particle
 			CookingMethod tempCook = other.gameObject.GetComponent(typeof(CookingMethod)) as CookingMethod;
-			tempCook.Cooking();
+			tempCook.StopCook();
             fireParticle.Stop();
         }
     }

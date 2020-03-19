@@ -15,6 +15,7 @@ public class Food : MonoBehaviour
         Sauce,
         Butter,
         Dough,
+        Cheese,
         //finished foods
 		TomatoSoup,
 		Broth,

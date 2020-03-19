@@ -43,7 +43,7 @@ public class CookingPan : CookingMethod
         }
 
         // Cooking Recipes here
-        if (cookingTimer == COOK_TIME_LIMIT)
+        if (cookingTimer >= COOK_TIME_LIMIT)
         {
             //Rendering Clear Ingredients
             for (int i = 0; i < currentFoodRender.Length; i++)
@@ -65,7 +65,33 @@ public class CookingPan : CookingMethod
                 currentFoodRender[(int)Food.FoodType.Steak] = Instantiate(foodLooks[(int)Food.FoodType.Steak]);
 
                 currentFoodRender[(int)Food.FoodType.Steak].transform.SetParent(gameObject.transform);
-                currentFoodRender[(int)Food.FoodType.Steak].transform.localPosition = new Vector3(0.0f, 0.05f, 0.0f);
+                currentFoodRender[(int)Food.FoodType.Steak].transform.localPosition = new Vector3(0.0f, 1.0f, 4.0f);
+            }
+            else if (foodArray[(int)Food.FoodType.Dough] == 3 && foodArray[(int)Food.FoodType.Butter] == 1)
+            {
+                //Clear and replace with finished recipe
+                Array.Clear(foodArray, 0, foodArray.Length);
+
+                foodArray[(int)Food.FoodType.Pancake] = 1;
+
+                //Spawn Food Render Output
+                currentFoodRender[(int)Food.FoodType.Pancake] = Instantiate(foodLooks[(int)Food.FoodType.Pancake]);
+
+                currentFoodRender[(int)Food.FoodType.Pancake].transform.SetParent(gameObject.transform);
+                currentFoodRender[(int)Food.FoodType.Pancake].transform.localPosition = new Vector3(0.0f, 1.0f, 4.0f);
+            }
+            else if (foodArray[(int)Food.FoodType.Dough] == 1 && foodArray[(int)Food.FoodType.Butter] == 1 && foodArray[(int)Food.FoodType.Shrimp] == 1)
+            {
+                //Clear and replace with finished recipe
+                Array.Clear(foodArray, 0, foodArray.Length);
+
+                foodArray[(int)Food.FoodType.Tempura] = 1;
+
+                //Spawn Food Render Output
+                currentFoodRender[(int)Food.FoodType.Tempura] = Instantiate(foodLooks[(int)Food.FoodType.Tempura]);
+
+                currentFoodRender[(int)Food.FoodType.Tempura].transform.SetParent(gameObject.transform);
+                currentFoodRender[(int)Food.FoodType.Tempura].transform.localPosition = new Vector3(0.0f, 3.0f, 4.0f);
             }
             else
             {
@@ -88,7 +114,7 @@ public class CookingPan : CookingMethod
             bakingTimer -= Time.deltaTime;
         }
 
-        if (bakingTimer == BAKE_TIME_LIMIT)
+        if (bakingTimer >= BAKE_TIME_LIMIT)
         {
             //Rendering Clear Ingredients
             for (int i = 0; i < currentFoodRender.Length; i++)
@@ -110,7 +136,34 @@ public class CookingPan : CookingMethod
                 currentFoodRender[(int)Food.FoodType.Croissant] = Instantiate(foodLooks[(int)Food.FoodType.Croissant]);
 
                 currentFoodRender[(int)Food.FoodType.Croissant].transform.SetParent(gameObject.transform);
-                currentFoodRender[(int)Food.FoodType.Croissant].transform.localPosition = new Vector3(0.0f, 0.05f, 0.0f);
+                currentFoodRender[(int)Food.FoodType.Croissant].transform.localPosition = new Vector3(0.0f, 1.0f, 4.0f);
+            }
+            else if (foodArray[(int)Food.FoodType.Dough] == 5)
+            {
+                //Clear and replace with finished recipe
+                Array.Clear(foodArray, 0, foodArray.Length);
+
+                foodArray[(int)Food.FoodType.Bread] = 1;
+
+                //Spawn Food Render Output
+                currentFoodRender[(int)Food.FoodType.Bread] = Instantiate(foodLooks[(int)Food.FoodType.Bread]);
+
+                currentFoodRender[(int)Food.FoodType.Bread].transform.SetParent(gameObject.transform);
+                currentFoodRender[(int)Food.FoodType.Bread].transform.localPosition = new Vector3(0.0f, 1.0f, 4.0f);
+            }
+            else if (foodArray[(int)Food.FoodType.Dough] == 2 && foodArray[(int)Food.FoodType.RawMeat] == 1
+                && foodArray[(int)Food.FoodType.Cheese] == 1 && foodArray[(int)Food.FoodType.Sauce] == 1)
+            {
+                //Clear and replace with finished recipe
+                Array.Clear(foodArray, 0, foodArray.Length);
+
+                foodArray[(int)Food.FoodType.Pizza] = 1;
+
+                //Spawn Food Render Output
+                currentFoodRender[(int)Food.FoodType.Pizza] = Instantiate(foodLooks[(int)Food.FoodType.Pizza]);
+
+                currentFoodRender[(int)Food.FoodType.Pizza].transform.SetParent(gameObject.transform);
+                currentFoodRender[(int)Food.FoodType.Pizza].transform.localPosition = new Vector3(0.0f, 1.0f, 4.0f);
             }
             else
             {
@@ -125,11 +178,41 @@ public class CookingPan : CookingMethod
 
     public override void Cooking()
     {
-        isCooking = !isCooking;
+        isCooking = true;
     }
 
     public override void Baking()
     {
-        isBaking = !isBaking;
+        isBaking = true;
+    }
+
+    public override void StopCook()
+    {
+        isBaking = false;
+        isCooking = false;
+    }
+
+    public override int GetResetFood()
+    {
+        int output = 0;
+        for (int i = 0; i < foodArray.Length; i++)
+        {
+            if (foodArray[i] != 0)
+            {
+                output = i;
+            }
+        }
+
+        for (int i = 0; i < currentFoodRender.Length; i++)
+        {
+            if (currentFoodRender[i] != null)
+            {
+                Destroy(currentFoodRender[i]);
+            }
+        }
+
+        Array.Clear(foodArray, 0, foodArray.Length);
+        haveCollided = true;
+        return output;
     }
 }
